@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mario Fact Generator</title>
+    <style>
+      body {
+        background-color: #000000; /* Mario sky blue */
+        color: #fff;
+        font-family: "Press Start 2P", monospace;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        background-color: #b6d400; /* Question block yellow */
+        padding: 30px;
+        border: 8px solid #855e00; /* Dark yellow border */
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Pronounced shadow */
+      }
+
+      button {
+        background-color: #e3000e; /* Mario red */
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        font-family: inherit;
+        font-size: 1.2em;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.2s; /* Faster transition */
+      }
+
+      button:hover {
+        background-color: #990000; /* Darker red on hover */
+      }
+
+      #fact-display {
+        font-size: 1.5em;
+        margin-top: 20px;
+        color: #000; /* Black text for better contrast */
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Mario Facts!</h1>
+      <button id="generate-btn">Hit Me!</button>
+      <div id="fact-display"></div>
+    </div>
+
+    <script>
+      // JavaScript (Same as before)
+      const facts = [
+        "The average person laughs 10 times a day.",
+        "It's impossible to sneeze with your eyes open.",
+        "A group of owls is called a parliament.",
+        "A shrimp's heart is in its head.",
+        "It's impossible for most people to lick their own elbow.",
+        "A crocodile can't stick its tongue out.",
+        "A group of larks is called an exaltation.",
+        "The world's smallest mammal is the bumblebee bat, which is smaller than a dime.",
+        "You can't fold a piece of paper in half more than 7 times (though the record is 12!).",
+        "Polar bears have black skin under their white fur.",
+        "The Earth has more trees than stars in the Milky Way galaxy.",
+        "It rains diamonds on Jupiter and Saturn.",
+        "Slugs have four noses.",
+        "Camels have three eyelids to protect themselves from blowing sand.",
+        // Add more fun facts here!
+      ];
+
+      const factDisplay = document.getElementById("fact-display");
+      const generateBtn = document.getElementById("generate-btn");
+
+      function displayRandomFact() {
+        const randomIndex = Math.floor(Math.random() * facts.length);
+        factDisplay.textContent = facts[randomIndex];
+      }
+
+      generateBtn.addEventListener("click", displayRandomFact);
+
+      // Load a fact on page load
+      displayRandomFact();
+    </script>
+  </body>
+</html>
